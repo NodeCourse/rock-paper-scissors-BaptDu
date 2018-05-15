@@ -1,9 +1,13 @@
 block content
     main.container
-        h1  Attention !
-        h2= title
 
-        p= messageUser
+    p User : #{userChoiceItem.name}
+    p Computer : #{computerChoiceItem.name}
 
+    if winner === 'user'
 
+        p You win
 
+    else if winner === 'computer'
+
+        p You loose

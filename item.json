@@ -1,0 +1,22 @@
+[
+    {
+      "id": "1",
+      "name": "ciseaux",
+      "image": "scissors.png",
+      "winOver": ["papier"]
+    },
+
+    {
+      "id": "2",
+      "name": "papier",
+      "image": "paper.png",
+      "winOver": ["pierre"]
+    },
+
+    {
+      "id": "3",
+      "name": "pierre",
+      "image": "rock.png",
+      "winOver": ["ciseaux"]
+    }
+]

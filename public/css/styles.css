@@ -1,3 +1,9 @@
 .content {
-    color: blue;
+    color: #00bf17;
+}
+
+.ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0
 }

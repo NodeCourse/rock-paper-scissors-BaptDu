@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const luck = require('random-item');
-const items = require('./items.json');
+const ramdomItem = require('random-item');
+const item = require('./item.json');
 const app = express();
 
 // Use Pug to render views
@@ -18,45 +18,35 @@ app.use(bodyParser.json());
 
 // Render the home page
 app.get('/', (req, res) => {
-    res.render('homepage', {items});
-
-
+    res.render('homepage', {item});
 });
 
 // Render the signup page
-app.get('/play/:items', (req, res) => {
-    res.render('play');
+app.get('/play/:item', (req, res) => {
 
-    function ComputerLuck() {
+    const userChoiceItem = item.find((item) => {
+            return item.id === req.params.item;
+        });
 
-        let choixOrdi = luck([items.name]);
+    const computerChoiceItem = ramdomItem(item);
 
-        if (choixOrdi === "papier") {
-            return res.render({messageUser: 'l\'ordinateur à jouer papier'})
+    function result(userChoiceItem, computerChoiceItem) {
+
+        if (userChoiceItem.winOver.includes(computerChoiceItem.id)){
+            return userChoiceItem;
         }
-        else if(choixOrdi === "ciseaux") {
-            return res.render({messageUser: 'l\'ordinateur à jouer ciseaux'})
 
+        if (computerChoiceItem.winOver.includes(userChoiceItem.id)){
+            return computerChoiceItem;
         }
-        else if(choixOrdi === "pierre") {
-            return res.render({messageUser: 'l\'ordinateur à jouer pierre'})
-        }
+
+        return null;
+
     }
 
+    const winner  = result(userChoiceItem, computerChoiceItem);
 
-    function UserLuck(User) {
-
-        if(User === "pierre") {
-            return res.render({messageUser: 'l\'ordinateur à jouer papier'})
-        }
-        else if(User === "feuille") {
-            return res.render({messageUser: 'l\'ordinateur à jouer feuille'})
-        }
-        else if(User === "ciseaux") {
-            return res.render({messageUser: 'l\'ordinateur à jouer ciseaux'})
-        }
-    }
-
+    res.render('play', {userChoiceItem, computerChoiceItem, winner});
 
 });
 
