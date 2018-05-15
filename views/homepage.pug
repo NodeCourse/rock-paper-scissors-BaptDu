@@ -1,0 +1,8 @@
+block content
+    main.container
+        h1  Faite vos jeux !!
+        ul.items
+            for item in items
+                li
+                a(href='/play/' + item.name, alt)
+                    img(src='/img/' + item.image)

@@ -1,0 +1,17 @@
+[
+    {
+      "id": "1",
+      "name": "ciseaux",
+      "image": "scissors.png"
+    },
+    {
+      "id": "2",
+      "name": "papier",
+      "image": "paper.png"
+    },
+    {
+      "id": "3",
+      "name": "pierre",
+      "image": "rock.png"
+    }
+]

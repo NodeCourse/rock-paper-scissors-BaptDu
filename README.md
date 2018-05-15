@@ -10,11 +10,11 @@ You will need to use the [random-item](https://www.npmjs.com/package/random-item
 
 ## Step by step
 
-1. Get a copy of this repository
-2. Clone it on your computer
-3. Create a new branch for your work
-3. Initialize a new Node.js project
-4. Install the dependencies you will need
+1. Get a copy of this repository [x]
+2. Clone it on your computer [x]
+3. Create a new branch for your work 
+3. Initialize a new Node.js project [x]
+4. Install the dependencies you will need [x]
 5. Write the code
 6. Commit and push your changes
 7. Visit your GitHub repository to create a pull request
